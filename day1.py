@@ -1,11 +1,8 @@
-#!/bin/python
-# coding=utf8
-
 def read_input():
     elf = []
     elves = []
 
-    with open('input.txt', 'rb') as f:
+    with open('input01.txt', 'rb') as f:
         for line in f:
             line = line.strip()
 
@@ -19,20 +16,10 @@ def read_input():
     return elves
 
 
-def get_top_three(calories, top_three):
-    top_three.append(calories)
-    top_three.sort(reverse=True)
-    top_three.pop()
-    return top_three
-
-
 if __name__ == '__main__':
-    top_three = [0, 0, 0]
-
     elves = read_input()
 
-    for elf in elves:
-        calories = sum(elf)
-        top_three = get_top_three(calories, top_three)
+    sum_of_calories = sorted([sum(elf) for elf in elves])
 
-    print sum(top_three)
+    print sum(sum_of_calories[-1:])
+    print sum(sum_of_calories[-3:])
