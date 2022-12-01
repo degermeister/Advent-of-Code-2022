@@ -19,7 +19,7 @@ def read_input():
 if __name__ == '__main__':
     elves = read_input()
 
-    sorted_sum_of_calories = sorted([sum(elf) for elf in elves])
+    sorted_sums_of_calories = sorted([sum(elf) for elf in elves])
 
-    print sum(sorted_sum_of_calories[-1:])
-    print sum(sorted_sum_of_calories[-3:])
+    print sum(sorted_sums_of_calories[-1:])
+    print sum(sorted_sums_of_calories[-3:])
