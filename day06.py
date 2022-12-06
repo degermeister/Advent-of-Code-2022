@@ -2,11 +2,9 @@
 def find_marker(data, marker_length):
     for index in xrange(len(datastream)):
         quartet = datastream[index:index + marker_length]
-        # print 'Quartet {}: {}'.format(index + 1, quartet)
         unique = 0
         for character in quartet:
             if quartet.count(character) > 1:
-                # print '{} exists.'.format(character)
                 break
             else:
                 unique += 1
